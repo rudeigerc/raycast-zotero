@@ -1,7 +1,3 @@
-interface Preferences {
-  zoteroBetterBibtexOutputFilePath: string;
-}
-
 interface Item {
   attachments: Attachment[];
   citationKey: string;
@@ -14,6 +10,8 @@ interface Item {
   title: string;
   url: string;
   itemType: string;
+  dateAdded: string;
+  dateModified: string;
 }
 
 interface Attachment {

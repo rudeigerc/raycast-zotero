@@ -154,3 +154,5 @@ extensions/**/*.zip
 .idea/
 
 .vscode
+
+raycast-env.d.ts
