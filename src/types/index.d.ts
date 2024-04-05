@@ -12,6 +12,7 @@ interface Item {
   itemType: string;
   dateAdded: string;
   dateModified: string;
+  abstractNote: string;
 }
 
 interface Attachment {

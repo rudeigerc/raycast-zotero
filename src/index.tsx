@@ -97,6 +97,7 @@ const Command = () => {
             }
             detail={
               <List.Item.Detail
+                markdown={item.abstractNote}
                 metadata={
                   <List.Item.Detail.Metadata>
                     <List.Item.Detail.Metadata.Label
@@ -114,11 +115,16 @@ const Command = () => {
                       <List.Item.Detail.Metadata.Label title="Publication" text={item.publicationTitle} />
                     )}
                     {item.DOI && <List.Item.Detail.Metadata.Label title="DOI" text={item.DOI} />}
-                    <List.Item.Detail.Metadata.Separator />
-                    <List.Item.Detail.Metadata.Label title="Tags" />
-                    {item.tags.map((tag) => (
-                      <List.Item.Detail.Metadata.Label key={tag.tag} title={tag.tag} icon={Icon.Tag} />
-                    ))}
+                    {item.tags.length > 0 && (
+                      <>
+                        <List.Item.Detail.Metadata.Separator />
+                        <List.Item.Detail.Metadata.TagList title="Tags">
+                          {item.tags.map((tag) => (
+                            <List.Item.Detail.Metadata.TagList.Item key={tag.tag} text={tag.tag} icon={Icon.Tag} />
+                          ))}
+                        </List.Item.Detail.Metadata.TagList>
+                      </>
+                    )}
                   </List.Item.Detail.Metadata>
                 }
               />
